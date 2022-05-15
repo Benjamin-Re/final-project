@@ -1,0 +1,30 @@
+
+export const countries = [
+    "Albania",
+    "Belgium",
+    "Croatia",
+    "Denmark",
+    "Estonia",
+    "France",
+    "Germany",
+    "Hungary",
+    "Italy",
+    "Jordan",
+    "Kuwait",
+    "Lithuania",
+    "Madagaskar",
+    "Norway",
+    "Oman",
+    "Poland",
+    "Qatar",
+    "Ruanda",
+    "Sweden",
+    "Turkey",
+    "Uganda",
+    "Venezuela",
+    "Wales",
+    "X",
+    "Yemen",
+    "Zambia"
+];
+

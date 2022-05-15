@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import {Layout} from "./components/Layout";
+import {GeneralContext} from "./components/Model";
+import { createContext, useState, useContext } from "react";
+
+export const Context = createContext();
 
 function App() {
+  const [letter, setLetter] = useState("B");
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Context.Provider value={{letter, setLetter}}>
+      <Layout></Layout>
+    </Context.Provider>
+    </>  
   );
+
+
 }
 
+
 export default App;
+
+/*
+- Get data from API
+- Store data in DB
+- Multiplayer with sockets
+*/
