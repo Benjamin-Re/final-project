@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-size: 25px;
+  font-size: 14px;
   font-family: monospace;
 }
 
@@ -27,7 +27,7 @@ body {
   margin: 0;
   list-style: none; 
   display: flex;
-  gap: 6rem;
+  gap: 2rem;
 }
 
 .nav li:hover{
