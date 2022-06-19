@@ -10,7 +10,7 @@ export function Card(props) {
       <div className="card" id={props.id}>
         <div className="upper"></div>
         <div className="lower">
-            {props.name}, {props.price}
+            {props.name}, {props.price}€
             <button onClick={clickHandler}>Add</button>
         </div>
       </div>

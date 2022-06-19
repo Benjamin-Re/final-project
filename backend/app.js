@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const port = 8000;
 const products = require('./Controller/productsController');
+const orders = require('./Controller/ordersController');
 const cors = require('cors');
 
 // Read the env config file
@@ -16,7 +17,7 @@ database.on('err', (err)=>{
     console.log(err);
 })
 database.once('connected', ()=> {
-    console.log("connection succesful");
+    console.log("connection succesful"); 
 })
 
 // Config the app
@@ -31,6 +32,7 @@ app.use(
     })
     );
 app.use("/products", products);
+app.use("/orders", orders);
 
 // Start server
 app.listen(port, ()=>{

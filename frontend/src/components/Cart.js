@@ -11,7 +11,7 @@ export function Cart() {
       {products.map(product => {
         return (
             <li>
-                {product.name}, {product.price}
+                {product.name}, {product.price}€
             </li>
         )
       })}
@@ -28,8 +28,22 @@ export function Cart() {
           send post request to update orders in db
           get request to get the order and display order confirmation*/
       
-      // For now console log the order
-      console.log(products);   
+      // Process the order
+      let order = {
+        "ordernr": 111,
+        "products": products,
+        "total": products.reduce((total, current) => {return total+= current.price}, 0),
+        "customer": "Leopoldina"
+      }
+      console.log(order);
+      fetch('http://localhost:8000/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(order)
+      }).then(res => {
+        return res.json()
+      }).then(data => console.log(data))
+      .catch(error => console.log(error))
   }
 }
 
