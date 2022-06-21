@@ -28,16 +28,17 @@ export function Cart() {
           send post request to update orders in db
           get request to get the order and display order confirmation*/
       
-      // Process the order
+      // Prepare the order
       let order = {
-        "ordernr": 111,
         "products": products,
-        "total": products.reduce((total, current) => {return total+= current.price}, 0),
-        "customer": "Leopoldina"
+        "total": products.reduce((total, current) => {return total+= current.price}, 0)
       }
-      console.log(order);
-      fetch('http://localhost:8000/orders', {
-        method: 'POST',
+      // Current user's id
+      let userId = "62b0b711f370adbebfa75135";
+
+      // Put request to user, to add the order to him
+      fetch('http://localhost:8000/users/'+userId, {
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order)
       }).then(res => {

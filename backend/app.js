@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const port = 8000;
 const products = require('./Controller/productsController');
 const orders = require('./Controller/ordersController');
+const users = require('./Controller/usersController');
 const cors = require('cors');
 
 // Read the env config file
@@ -33,6 +34,7 @@ app.use(
     );
 app.use("/products", products);
 app.use("/orders", orders);
+app.use("/users", users);
 
 // Start server
 app.listen(port, ()=>{

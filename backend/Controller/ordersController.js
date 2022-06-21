@@ -5,7 +5,6 @@ const Model = require('../Model/orderModel');
 // Post document
 router.post('/', (req, res)=>{
     const data = new Model({
-        ordernr: req.body.ordernr,
         products: req.body.products,
         total: req.body.total,
         customer: req.body.customer
